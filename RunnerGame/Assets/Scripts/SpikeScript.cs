@@ -4,6 +4,11 @@ public class SpikeScript : MonoBehaviour
 {
     public ObjectGenerator spikeGenerator;
 
+    private void Start()
+    {
+        spikeGenerator = FindObjectOfType<ObjectGenerator>();
+    }
+
     private void Update()
     {
         transform.Translate(Vector2.left * spikeGenerator.currentSpeed * Time.deltaTime);

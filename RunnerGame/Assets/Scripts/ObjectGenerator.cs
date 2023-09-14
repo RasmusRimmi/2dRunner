@@ -4,6 +4,8 @@ public class ObjectGenerator : MonoBehaviour
 {
     public GameObject spike;
 
+    public PlayerScript player;
+
     public float minSpeed;
     public float maxSpeed;
     public float currentSpeed;
@@ -30,10 +32,9 @@ public class ObjectGenerator : MonoBehaviour
 
     private void Update()
     {
-        if(currentSpeed < maxSpeed)
+        if (currentSpeed < maxSpeed && player.isAlive == true)
         {
             currentSpeed += speedMultiplier;
         }
     }
-
 }
