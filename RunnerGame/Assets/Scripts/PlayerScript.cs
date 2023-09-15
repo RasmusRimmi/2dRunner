@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     bool isGrounded = false;
     
     public bool isAlive = true;
+    public bool canContinue;
 
     Rigidbody2D rb;
 
@@ -21,6 +22,7 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject scoreCanvas;
     public GameObject gameOverCanvas;
+    public GameObject continueButton;
 
     public ObjectGenerator oGenerator;
 
@@ -39,9 +41,10 @@ public class PlayerScript : MonoBehaviour
     {
         saveManager = FindObjectOfType<SaveManager>();
         ads = FindObjectOfType<Interstitial>();
+        canContinue = true;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -94,6 +97,11 @@ public class PlayerScript : MonoBehaviour
             if (saveManager.deathCount % 5 == 0)
             {
                 ads.ShowAd();
+            }
+
+            if(canContinue == false)
+            {
+                continueButton.SetActive(false);
             }
         }
     }

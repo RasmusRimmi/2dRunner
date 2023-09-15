@@ -102,12 +102,16 @@ MonoBehaviour:
   anim: {fileID: 0}
   jumpForce: 600
   score: 0
+  death: 0
   isGrounded: 0
   isAlive: 1
+  canContinue: 0
   scoreText: {fileID: 0}
   totalScore: {fileID: 0}
+  highScore: {fileID: 0}
   scoreCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
+  continueButton: {fileID: 0}
   oGenerator: {fileID: 0}
 --- !u!61 &4961326946281168847
 BoxCollider2D:
@@ -122,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.008104026}
+  m_Offset: {x: -0.0002399087, y: 0.005662203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +137,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28417516, y: 0.41283643}
+  m_Size: {x: 0.25394046, y: 0.40620208}
   m_EdgeRadius: 0
 --- !u!50 &4961326946281168846
 Rigidbody2D:

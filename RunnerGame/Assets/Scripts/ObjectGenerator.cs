@@ -19,7 +19,7 @@ public class ObjectGenerator : MonoBehaviour
 
     public void GenerateNextSpikeWithGap()
     {
-        float randomWait = Random.Range(0.1f, 1.2f);
+        float randomWait = Random.Range(0.2f, 1.2f);
         Invoke("generateSpike", randomWait);
     }
 
@@ -35,7 +35,7 @@ public class ObjectGenerator : MonoBehaviour
         SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (currentSpeed < maxSpeed && player.isAlive == true)
         {

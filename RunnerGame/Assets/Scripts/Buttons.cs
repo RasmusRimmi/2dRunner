@@ -6,6 +6,13 @@ public class Buttons : MonoBehaviour
     public PlayerScript player;
     public ObjectGenerator ObjGen;
 
+    Interstitial ads;
+
+    private void Start()
+    {
+        ads = FindObjectOfType<Interstitial>();
+    }
+
     public void StartGameButton()
     {
         SceneManager.LoadScene("Game");
@@ -25,13 +32,18 @@ public class Buttons : MonoBehaviour
 
     public void ContinueGame()
     {
-        //DestroyAll("Spike");
-        player.isAlive = true;
-        player.scoreCanvas.SetActive(true);
-        player.gameOverCanvas.SetActive(false);
-        //ObjGen.GenerateNextSpikeWithGap();
-        Time.timeScale = 1;
-        //ObjGen.generateSpike();
+        if (player.canContinue == true)
+        {
+            //DestroyAll("Spike");
+            player.isAlive = true;
+            player.scoreCanvas.SetActive(true);
+            player.gameOverCanvas.SetActive(false);
+            //ObjGen.GenerateNextSpikeWithGap();
+            Time.timeScale = 1;
+            //ObjGen.generateSpike();
+            player.canContinue = false;
+            //ads.ShowAd();
+        }
     }
 
     void DestroyAll(string tag)
