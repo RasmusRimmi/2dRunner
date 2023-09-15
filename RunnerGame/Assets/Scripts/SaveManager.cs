@@ -1,10 +1,13 @@
 using UnityEngine;
+using TMPro;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
 
     private PlayerScript player;
+
+    public TMP_Text highscoreText;
 
     public float score;
 
@@ -13,18 +16,6 @@ public class SaveManager : MonoBehaviour
     public int deathCount;
 
     public int coins;
-
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-            Destroy(gameObject);
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +27,22 @@ public class SaveManager : MonoBehaviour
         {
             highscore = PlayerPrefs.GetFloat("Highscore");
         }
+
+        if(PlayerPrefs.HasKey("Death"))
+        {
+            deathCount = PlayerPrefs.GetInt("Death");
+        }
+
+        highscoreText.text = highscore.ToString("F0");
     }
 
     // Update is called once per frame
     void Update()
     {
-        score = player.score;
-
-        //if (player.isAlive == false)
-        //{
-        //    SaveHighScore();
-        //    Debug.Log("Highscore saved");
-        //}
+        if(player != null)
+        {
+            score = player.score;
+        }       
     }
 
     public void SaveHighScore()
@@ -55,6 +50,15 @@ public class SaveManager : MonoBehaviour
         if(player.score > PlayerPrefs.GetFloat("Highscore"))
         {
             PlayerPrefs.SetFloat("Highscore", score);
+        }
+    }
+
+    public void SaveDeathCount()
+    {
+        if (player.isAlive == false)
+        {
+            deathCount = deathCount + 1;
+            PlayerPrefs.SetInt("Death", deathCount);
         }
     }
 }

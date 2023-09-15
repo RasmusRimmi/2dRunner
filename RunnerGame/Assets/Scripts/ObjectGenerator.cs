@@ -25,12 +25,17 @@ public class ObjectGenerator : MonoBehaviour
 
     public void generateSpike()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
+
         GameObject SpikeIns = Instantiate(spike, transform.position, transform.rotation);
 
         SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (currentSpeed < maxSpeed && player.isAlive == true)
         {

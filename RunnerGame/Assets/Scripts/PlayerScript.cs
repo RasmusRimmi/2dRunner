@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
     public Animator anim;
     public float jumpForce;
     public float score;
+    public int death;
     
     [SerializeField] 
     bool isGrounded = false;
@@ -16,6 +17,7 @@ public class PlayerScript : MonoBehaviour
 
     public TMP_Text scoreText;
     public TMP_Text totalScore;
+    public TMP_Text highScore;
 
     public GameObject scoreCanvas;
     public GameObject gameOverCanvas;
@@ -23,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     public ObjectGenerator oGenerator;
 
     SaveManager saveManager;
+    Interstitial ads;
 
     private void Awake()
     {
@@ -35,9 +38,10 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         saveManager = FindObjectOfType<SaveManager>();
+        ads = FindObjectOfType<Interstitial>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -69,12 +73,28 @@ public class PlayerScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Spike"))
         {
-            saveManager.SaveHighScore();
-            isAlive = false;
             Time.timeScale = 0;
+            isAlive = false;
+            death = death + 1;
+            saveManager.SaveHighScore();
+            saveManager.SaveDeathCount();   
             scoreCanvas.SetActive(false);
             gameOverCanvas.SetActive(true);
-            totalScore.text = "Score: " + score.ToString("F0");
+            totalScore.text = "Score " + score.ToString("F0");
+            
+            if (score > saveManager.highscore)
+            {
+                highScore.text = "Highscore " + score.ToString("F0");
+            }
+            else
+            {
+                highScore.text = "Highscore " + saveManager.highscore.ToString("F0");
+            }
+
+            if (saveManager.deathCount % 5 == 0)
+            {
+                ads.ShowAd();
+            }
         }
     }
 }

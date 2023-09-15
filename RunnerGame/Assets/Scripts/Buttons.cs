@@ -25,18 +25,22 @@ public class Buttons : MonoBehaviour
 
     public void ContinueGame()
     {
-        DestroyAll("Spike");
+        //DestroyAll("Spike");
         player.isAlive = true;
-        Time.timeScale = 1;
         player.scoreCanvas.SetActive(true);
         player.gameOverCanvas.SetActive(false);
-        ObjGen.generateSpike();
+        //ObjGen.GenerateNextSpikeWithGap();
+        Time.timeScale = 1;
+        //ObjGen.generateSpike();
     }
 
     void DestroyAll(string tag)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Spike");
-        foreach (GameObject enemy in enemies)
-            GameObject.Destroy(enemy);
+        GameObject[] spikes = GameObject.FindGameObjectsWithTag("Spike");
+        foreach (GameObject spike in spikes)
+        {
+            GameObject.Destroy(spike);
+        }
+            
     }
 }
