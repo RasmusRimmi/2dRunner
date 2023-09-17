@@ -34,14 +34,15 @@ public class Buttons : MonoBehaviour
     {
         if (player.canContinue == true)
         {
-            //DestroyAll("Spike");
+            DestroyAll("Spike");
             player.isAlive = true;
             player.scoreCanvas.SetActive(true);
             player.gameOverCanvas.SetActive(false);
             //ObjGen.GenerateNextSpikeWithGap();
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
             //ObjGen.generateSpike();
             player.canContinue = false;
+            player.tapText.SetActive(true);
             //ads.ShowAd();
         }
     }

@@ -23,14 +23,14 @@ public class SaveManager : MonoBehaviour
         score = 0;
         player = FindObjectOfType<PlayerScript>();      
 
-        if (PlayerPrefs.HasKey("Highscore"))
+        if (PlayerPrefs.HasKey("CITYRUNNER_FLOAT_HIGHSCORE"))
         {
-            highscore = PlayerPrefs.GetFloat("Highscore");
+            highscore = PlayerPrefs.GetFloat("CITYRUNNER_FLOAT_HIGHSCORE");
         }
 
-        if(PlayerPrefs.HasKey("Death"))
+        if(PlayerPrefs.HasKey("CITYRUNNER_INT_DEATH"))
         {
-            deathCount = PlayerPrefs.GetInt("Death");
+            deathCount = PlayerPrefs.GetInt("CITYRUNNER_INT_DEATH");
         }
 
         highscoreText.text = highscore.ToString("F0");
@@ -47,9 +47,9 @@ public class SaveManager : MonoBehaviour
 
     public void SaveHighScore()
     {
-        if(player.score > PlayerPrefs.GetFloat("Highscore"))
+        if(player.score > PlayerPrefs.GetFloat("CITYRUNNER_FLOAT_HIGHSCORE"))
         {
-            PlayerPrefs.SetFloat("Highscore", score);
+            PlayerPrefs.SetFloat("CITYRUNNER_FLOAT_HIGHSCORE", score);
         }
     }
 
@@ -58,7 +58,7 @@ public class SaveManager : MonoBehaviour
         if (player.isAlive == false)
         {
             deathCount = deathCount + 1;
-            PlayerPrefs.SetInt("Death", deathCount);
+            PlayerPrefs.SetInt("CITYRUNNER_INT_DEATH", deathCount);
         }
     }
 }

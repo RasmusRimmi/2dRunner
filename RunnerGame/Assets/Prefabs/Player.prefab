@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4961326946281168845}
   - component: {fileID: 4961326946281168847}
   - component: {fileID: 4961326946281168846}
+  - component: {fileID: 1811921654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -99,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce6aea192d7dcf47aaa9f5df7343af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  jumpForce: 600
+  anim: {fileID: 1811921654}
+  jumpForce: 750
   score: 0
   death: 0
   isGrounded: 0
@@ -111,8 +112,11 @@ MonoBehaviour:
   highScore: {fileID: 0}
   scoreCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
-  continueButton: {fileID: 0}
+  continueCanvas: {fileID: 0}
+  tapText: {fileID: 0}
   oGenerator: {fileID: 0}
+  audio: {fileID: 0}
+  rewardAd: {fileID: 0}
 --- !u!61 &4961326946281168847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,10 +157,30 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_AngularDrag: 0.06
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &1811921654
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961326946281168842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3f68e7b0b5d695489f7e78c49705d6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

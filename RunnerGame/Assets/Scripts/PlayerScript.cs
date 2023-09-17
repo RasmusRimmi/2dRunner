@@ -22,33 +22,49 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject scoreCanvas;
     public GameObject gameOverCanvas;
-    public GameObject continueButton;
+    public GameObject continueCanvas;
+    public GameObject tapText;
 
     public ObjectGenerator oGenerator;
+    public AudioManager audio;
 
     SaveManager saveManager;
     Interstitial ads;
+    public RewardedAdsButton rewardAd;
 
     private void Awake()
     {
         scoreCanvas.SetActive(true);
         gameOverCanvas.SetActive(false);
+        continueCanvas.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         score = 0;
     }
 
     private void Start()
     {
+        Time.timeScale = 0;
         saveManager = FindObjectOfType<SaveManager>();
         ads = FindObjectOfType<Interstitial>();
         canContinue = true;
+        rewardAd.LoadAd();
+        anim.SetBool("startGame", false);
+        tapText.SetActive(true);
     }
 
     private void Update()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            if(isGrounded == true)
+            if(Time.timeScale == 0 && isAlive)
+            {
+                Time.timeScale = 1;
+                anim.SetBool("startGame", true);
+                tapText.SetActive(false);
+                audio.music.Play();
+            }
+
+            else if(isGrounded == true && isAlive)
             {
                 rb.AddForce(Vector2.up * jumpForce);
                 anim.SetBool("IsJumping", true);
@@ -83,7 +99,9 @@ public class PlayerScript : MonoBehaviour
             saveManager.SaveDeathCount();   
             scoreCanvas.SetActive(false);
             gameOverCanvas.SetActive(true);
+            continueCanvas.SetActive(true);
             totalScore.text = "Score " + score.ToString("F0");
+            audio.music.Pause();
             
             if (score > saveManager.highscore)
             {
@@ -101,7 +119,7 @@ public class PlayerScript : MonoBehaviour
 
             if(canContinue == false)
             {
-                continueButton.SetActive(false);
+                continueCanvas.SetActive(false);
             }
         }
     }

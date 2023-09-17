@@ -10,34 +10,33 @@ public class ObjectGenerator : MonoBehaviour
     public float maxSpeed;
     public float currentSpeed;
     public float speedMultiplier;
+    private float startDelay = 1;
+    public float repeatDelay;
 
     private void Awake()
     {
         currentSpeed = minSpeed;
-        generateSpike();
     }
 
-    public void GenerateNextSpikeWithGap()
+    private void Start()
     {
-        float randomWait = Random.Range(0.2f, 1.2f);
-        Invoke("generateSpike", randomWait);
+        Invoke("SpawnSpike", startDelay);
     }
 
-    public void generateSpike()
+    public void SpawnSpike()
     {
-        if(Time.timeScale == 0)
-        {
-            return;
-        }
+        repeatDelay = Random.Range(0.7f, 2.0f);
 
         GameObject SpikeIns = Instantiate(spike, transform.position, transform.rotation);
 
         SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;
+
+        Invoke("SpawnSpike", repeatDelay);
     }
 
     private void Update()
     {
-        if (currentSpeed < maxSpeed && player.isAlive == true)
+        if (currentSpeed < maxSpeed && player.isAlive == true && Time.timeScale == 1)
         {
             currentSpeed += speedMultiplier;
         }

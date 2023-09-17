@@ -9,6 +9,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     private string _gameId;
 
     public Interstitial interstitialAd;
+    public RewardedAdsButton rewardedAds;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     {
         Debug.Log("Unity Ads initialization complete.");
         interstitialAd.LoadAd();
+        rewardedAds.LoadAd();
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
