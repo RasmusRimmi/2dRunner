@@ -25,16 +25,16 @@ public class ObjectGenerator : MonoBehaviour
 
     public void SpawnSpike()
     {
-        if(currentSpeed <= 18.0f)
+        if (currentSpeed <= 18.0f)
         {
             repeatDelay = Random.Range(0.7f, 2.0f);
         }
 
-        else if(currentSpeed > 18.0f)
+        else if (currentSpeed > 18.0f)
         {
             repeatDelay = Random.Range(0.8f, 1.3f);
         }
-        
+
         GameObject SpikeIns = Instantiate(spike, transform.position, transform.rotation);
 
         SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;
