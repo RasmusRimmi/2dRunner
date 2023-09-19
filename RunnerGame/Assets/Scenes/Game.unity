@@ -139,7 +139,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &482727251
 SpriteRenderer:
@@ -252,7 +252,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &590061285
 MonoBehaviour:
@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1811921649}
   ObjGen: {fileID: 1975432128}
+  ads: {fileID: 0}
 --- !u!1 &591520016
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +368,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &591520017
 RectTransform:
@@ -502,7 +503,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &615114707
 RectTransform:
@@ -637,7 +638,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!82 &660223342
 AudioSource:
@@ -651,7 +652,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4a4ca21c549433b4d883352743e33514, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -763,6 +764,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &753921257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3937230800892172873, guid: a3c4f576f43168d4f8f36fe265a06c01, type: 3}
+  m_PrefabInstance: {fileID: 845813454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fed818561bc44f8efe07814472bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &845813454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -774,6 +786,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3937230800892172872, guid: a3c4f576f43168d4f8f36fe265a06c01, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937230800892172873, guid: a3c4f576f43168d4f8f36fe265a06c01, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1811921649}
     - target: {fileID: 3937230800892172873, guid: a3c4f576f43168d4f8f36fe265a06c01, type: 3}
       propertyPath: highscoreText
       value: 
@@ -841,7 +861,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &955899178
 RectTransform:
@@ -1060,7 +1080,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1001200589
 RectTransform:
@@ -1210,7 +1230,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1013455541
 RectTransform:
@@ -1345,7 +1365,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1042224541
 MonoBehaviour:
@@ -1481,7 +1501,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1122436633
 MonoBehaviour:
@@ -1576,6 +1596,14 @@ PrefabInstance:
     - target: {fileID: 3866312135708488233, guid: 5ddf42a6bfa642a4a870af0153085720, type: 3}
       propertyPath: m_Name
       value: Framerate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866312135708488233, guid: 5ddf42a6bfa642a4a870af0153085720, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866312135708488233, guid: 5ddf42a6bfa642a4a870af0153085720, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8111721126737716584, guid: 5ddf42a6bfa642a4a870af0153085720, type: 3}
       propertyPath: m_RootOrder
@@ -1707,7 +1735,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1568626705
 RectTransform:
@@ -1842,7 +1870,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1619694307
 RectTransform:
@@ -1977,7 +2005,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1705688028
 RectTransform:
@@ -2112,7 +2140,7 @@ GameObject:
   m_TagString: FinishLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &1808044884
 BoxCollider2D:
@@ -2235,7 +2263,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1889650724
 RectTransform:
@@ -2370,7 +2398,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1898124680
 MonoBehaviour:
@@ -2471,6 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1811921649}
   ObjGen: {fileID: 1975432128}
+  ads: {fileID: 0}
 --- !u!1 &1937782771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,7 +2516,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1937782772
 RectTransform:
@@ -2622,7 +2651,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1939185721
 MonoBehaviour:
@@ -2686,7 +2715,7 @@ GameObject:
   m_TagString: NextLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1975432128
 MonoBehaviour:
@@ -2830,7 +2859,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
-      propertyPath: audio
+      propertyPath: ads
+      value: 
+      objectReference: {fileID: 1939185723}
+    - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
+      propertyPath: music
       value: 
       objectReference: {fileID: 660223343}
     - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
@@ -2846,10 +2879,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 591520018}
     - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
-      propertyPath: jumpForce
-      value: 770
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1705688029}
@@ -2861,6 +2890,10 @@ PrefabInstance:
       propertyPath: totalScore
       value: 
       objectReference: {fileID: 1619694308}
+    - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
+      propertyPath: saveManager
+      value: 
+      objectReference: {fileID: 753921257}
     - target: {fileID: 4961326946281168845, guid: 8f51df1d37845df429588ff31b77a7ab, type: 3}
       propertyPath: scoreCanvas
       value: 

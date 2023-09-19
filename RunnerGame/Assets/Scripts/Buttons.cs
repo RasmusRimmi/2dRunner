@@ -6,12 +6,7 @@ public class Buttons : MonoBehaviour
     public PlayerScript player;
     public ObjectGenerator ObjGen;
 
-    Interstitial ads;
-
-    private void Start()
-    {
-        ads = FindObjectOfType<Interstitial>();
-    }
+    public Interstitial ads;
 
     public void StartGameButton()
     {

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1811921654}
-  jumpForce: 750
+  jumpForce: 700
   score: 0
   death: 0
   isGrounded: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   continueCanvas: {fileID: 0}
   tapText: {fileID: 0}
   oGenerator: {fileID: 0}
-  audio: {fileID: 0}
+  music: {fileID: 0}
   rewardAd: {fileID: 0}
 --- !u!61 &4961326946281168847
 BoxCollider2D:
@@ -130,7 +130,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0002399087, y: 0.005662203}
+  m_Offset: {x: -0.0088252425, y: 0.0075285435}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -141,7 +141,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25394046, y: 0.40620208}
+  m_Size: {x: 0.20093548, y: 0.4024694}
   m_EdgeRadius: 0
 --- !u!50 &4961326946281168846
 Rigidbody2D:
@@ -157,12 +157,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.06
-  m_GravityScale: 6
+  m_AngularDrag: 0.09
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!95 &1811921654
 Animator:

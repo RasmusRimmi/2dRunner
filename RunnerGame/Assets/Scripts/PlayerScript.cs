@@ -26,10 +26,10 @@ public class PlayerScript : MonoBehaviour
     public GameObject tapText;
 
     public ObjectGenerator oGenerator;
-    public AudioManager audio;
+    public AudioManager music;
 
-    SaveManager saveManager;
-    Interstitial ads;
+    public SaveManager saveManager;
+    public Interstitial ads;
     public RewardedAdsButton rewardAd;
 
     private void Awake()
@@ -44,8 +44,6 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0;
-        saveManager = FindObjectOfType<SaveManager>();
-        ads = FindObjectOfType<Interstitial>();
         canContinue = true;
         rewardAd.LoadAd();
         anim.SetBool("startGame", false);
@@ -61,7 +59,7 @@ public class PlayerScript : MonoBehaviour
                 Time.timeScale = 1;
                 anim.SetBool("startGame", true);
                 tapText.SetActive(false);
-                audio.music.Play();
+                music.music.Play();
             }
 
             else if(isGrounded == true && isAlive)
@@ -101,7 +99,7 @@ public class PlayerScript : MonoBehaviour
             gameOverCanvas.SetActive(true);
             continueCanvas.SetActive(true);
             totalScore.text = "Score " + score.ToString("F0");
-            audio.music.Pause();
+            music.music.Pause();
             
             if (score > saveManager.highscore)
             {

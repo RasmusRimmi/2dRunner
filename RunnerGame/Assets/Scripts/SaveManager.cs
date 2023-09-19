@@ -5,7 +5,7 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
 
-    private PlayerScript player;
+    public PlayerScript player;
 
     public TMP_Text highscoreText;
 
@@ -20,8 +20,7 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
-        player = FindObjectOfType<PlayerScript>();      
+        score = 0;  
 
         if (PlayerPrefs.HasKey("CITYRUNNER_FLOAT_HIGHSCORE"))
         {
